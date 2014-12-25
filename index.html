@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON Stringifier | Text to JSON string converter</title>
+  <meta name="description" content="convert text to JSON sring">
+  <meta name="author" content="frantic1048">
+  <link href='http://fonts.lug.ustc.edu.cn/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="flag-wrap">
+  <span id="flag-source">text here</span>
+  <span id="flag-JSON">JSON string</span>
+</div>
+<div id="editor-wrap">
+  <textarea name="sourcetext" id="sourcetext" cols="30" rows="10"></textarea>
+  <textarea name="stringified" id="stringified" cols="30" rows="10" onclick="this.focus();this.select()" readonly="readonly"></textarea>
+</div>
+<script type="application/javascript">
+  document.getElementById('sourcetext').addEventListener('keyup',
+                                                        function(ev){
+                                                          document.getElementById('stringified').value = JSON.stringify(ev.target.value);
+                                                        });
+</script>
+<style type="text/css">
+body{
+  padding:0;
+  margin:0;
+  font-family: 'Share Tech Mono', monospace;
+}
+#flag-wrap{
+  position:fixed;
+  z-index:-1;
+  left:0;
+  top:0;
+  height:100vh;
+  width:100vw;
+  font-size:0;
+}
+#flag-source,
+#flag-JSON{
+  display:inline-block;
+  width:50vw;
+  height:100vh;
+  line-height:100vh;
+  text-align:center;
+  font-size:72px;
+  font-weight:bold;
+}
+#flag-source{
+  color:#333;
+  background:#0a0a0a;
+}
+#flag-JSON{
+  color:#708CFF;
+  background: #eee;
+}
+#editor-wrap{
+  position:fixed;
+  z-index:9;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width:100vw;
+  font-size: 0px;
+}
+textarea{
+  padding: 0;
+  margin: 0;
+  border:none;
+  width:50vw;
+  height:100vh;
+  font-size:16px;
+  font-family: 'Share Tech Mono', monospace;
+  resize: none;
+  background:transparent;
+  box-shadow: inset 0 0 1px white;
+}
+#sourcetext{
+  color:#ccc;
+}
+#stringified{
+  color:#222;
+}
+</style>
+</body>
+</html>
