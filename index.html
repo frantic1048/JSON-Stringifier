@@ -76,12 +76,12 @@ textarea{
   background:transparent;
   box-shadow: inset 0 0 1px white;
 }
-#sourcetext{
-  color:#ccc;
-}
-#stringified{
-  color:#222;
-}
+#sourcetext{ color:#ccc; }
+#sourcetext::-moz-selection{ background:rgba(400,400,400,.2); }
+#sourcetext::selection{ background:rgba(400,400,400,.2); }
+#stringified{ color:#222; }
+#stringified::-moz-selection{ background:rgba(0,0,0,.2); }
+#stringified::selection{ background:rgba(0,0,0,.2); }
 </style>
 </body>
 </html>
